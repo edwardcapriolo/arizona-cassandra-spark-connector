@@ -39,10 +39,11 @@ object Publishing extends sbt.librarymanagement.DependencyBuilders {
 
     val personalCred = Some(Credentials(Path.userHome / ".sbt" / "credentials"))
     val deployCred = Some(Credentials(Path.userHome / ".sbt" / "credentials.deploy"))
+    val sonatypeCentralCred = Some(Credentials(Path.userHome / ".sbt" / "sonatype_central_credentials"))
 
     println(s"Reading credentials from $credFile")
 
-    Seq(credFile, defaultCredentialsLocation,  personalCred, deployCred).flatten
+    Seq(credFile, defaultCredentialsLocation, personalCred, deployCred, sonatypeCentralCred).flatten
   }
 
 
